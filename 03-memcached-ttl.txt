@@ -1,0 +1,19 @@
+$ date -Is
+2026-10-26T11:43:26+03:00
+$ printf 'set key1 0 5 5\r\nhello\r\nset key2 0 5 5\r\nworld\r\nset key3 0 5 3\r\n123\r\nquit\r\n' | nc -N 127.0.0.1 11211
+STORED
+STORED
+STORED
+$ printf 'get key1 key2 key3\r\nquit\r\n' | nc -N 127.0.0.1 11211
+VALUE key1 0 5
+hello
+VALUE key2 0 5
+world
+VALUE key3 0 3
+123
+END
+$ sleep 6
+$ date -Is
+2026-10-26T11:43:32+03:00
+$ printf 'get key1 key2 key3\r\nquit\r\n' | nc -N 127.0.0.1 11211
+END

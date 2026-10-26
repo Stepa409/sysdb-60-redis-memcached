@@ -1,0 +1,8 @@
+$ redis-cli -n 15 SET key5 5
+OK
+$ redis-cli -n 15 OBJECT ENCODING key5
+"int"
+$ redis-cli -n 15 INCRBY key5 5
+(integer) 10
+$ redis-cli -n 15 GET key5
+"10"

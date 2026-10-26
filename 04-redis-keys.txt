@@ -1,0 +1,10 @@
+$ redis-cli -n 15 MSET key1 hello key2 world key3 123
+OK
+$ redis-cli -n 15 KEYS "*"
+1) "key1"
+2) "key3"
+3) "key2"
+$ redis-cli -n 15 MGET key1 key2 key3
+1) "hello"
+2) "world"
+3) "123"

@@ -1,0 +1,13 @@
+$ systemctl --no-pager --full status memcached
+● memcached.service - memcached daemon
+     Loaded: loaded (/usr/lib/systemd/system/memcached.service; enabled; preset: enabled)
+     Active: active (running) since Mon 2026-10-26 11:42:14 MSK; 1min 11s ago
+       Docs: man:memcached(1)
+   Main PID: 2994 (memcached)
+      Tasks: 10 (limit: 4107)
+     Memory: 1.7M (peak: 1.9M)
+        CPU: 37ms
+     CGroup: /system.slice/memcached.service
+             └─2994 /usr/bin/memcached -m 64 -p 11211 -u memcache -l 127.0.0.1 -l ::1 -P /var/run/memcached/memcached.pid
+
+Oct 26 11:42:14 ubuntu-gnu-linux-24-04-3 systemd[1]: Started memcached.service - memcached daemon.
